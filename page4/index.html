@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>profile-Hamed-sarhan</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/Screenshot_2023-06-25_140100-removebg-preview.png">
+    <link rel="icon" href="../images/Screenshot_2023-06-25_140100-removebg-preview.png">
+
+</head>
+
+<body>
+    <header style="display: flex; justify-content: space-between; align-items: center;">
+        <div style="display: flex;">
+            <img src="../images/Screenshot_2023-06-25_140100-removebg-preview.png" alt=""
+                style="width: 130px; height: 130px; padding: 0; margin-left: 30px;">
+        </div>
+        <nav dir="ltr" style="display: flex; flex-direction: row; width: auto; margin-top: 120px;">
+            <a href="../index.html" style="text-decoration: none; color: white; font-weight: bold; margin-right: 29px;"
+                id="nav1">Home</a>
+            <a href="../page2/index.html"
+                style="text-decoration: none; color: rgb(198, 193, 193); font-weight: bold; margin-right: 29px;"
+                id="nav1">About</a>
+            <a href="../page3/index.html"
+                style="text-decoration: none; color: white; font-weight: bold; margin-right: 29px;" id="nav1">Some
+                works</a>
+            <a href="index.html" style="text-decoration: none; color: blue; font-weight: bold; margin-right: 29px;"
+                id="nav1">Contact me</a>
+
+        </nav>
+    </header>
+    <main class="main1">
+        <center>
+            <div>
+                <form onsubmit="sendMessage(event)">
+                    <input type="text" id="name" placeholder="Your Name"><br><br>
+                    <input type="email" id="email" placeholder="Your Email"><br><br>
+                    <textarea id="message" placeholder="Your Message"></textarea><br><br>
+                    <button type="submit" id="butonsubmit">Submit</button>
+                </form>
+            </div>
+
+            <script>
+                function sendMessage(event) {
+                    event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+
+                    // جمع المعلومات من النموذج
+                    var name = document.getElementById("name").value;
+                    var email = document.getElementById("email").value;
+                    var message = document.getElementById("message").value;
+
+                    // إنشاء كائن XMLHttpRequest
+                    var xhr = new XMLHttpRequest();
+
+                    // تحديد طريقة الإرسال والملف المستهدف
+                    xhr.open("POST", "send_email.php", true);
+
+                    // تحديد رأس الطلب
+                    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+                    // إرسال البيانات إلى الخادم
+                    xhr.send("name=" + name + "&email=" + email + "&message=" + message);
+
+                    // استجابة من الخادم
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            // عرض رسالة الإرسال الناجح
+                            alert(xhr.responseText);
+                            // إفراغ حقول النموذج
+                            document.getElementById("name").value = "";
+                            document.getElementById("email").value = "";
+                            document.getElementById("message").value = "";
+                        } else if (xhr.readyState === 4 && xhr.status !== 200) {
+                            // عرض رسالة الإرسال الفاشل
+                            alert("Failed to send message.");
+                        }
+                    }
+                }
+            </script>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <hr style="background: black;"><br><br>
+
+            <div>
+                <center>
+                    <h2 style="font-weight: bold; color: white; font-family: 'Roboto', sans-serif;">Contact me</h2>
+                    <center>
+                        <div><br><br><br><br>
+                            <div class="buttons">
+                                <div class="gmail">
+                                    <span style="font-size: 30px; font-weight: bold;">Talk to me</span><br><br>
+                                    <span style="font-weight: bold;">f.t.tcompany667@gmail.com</span>
+                                </div><br><br><br>
+                                <div class="whatsapp">
+                                    <i class="fa fa-whatsapp"></i>
+                                    <span style="font-size: 30px; font-weight: bold;">Chat with me</span><br><br>
+                                    <span style="font-weight: bold;">+201069514698</span>
+                                </div>
+                            </div>
+                        </div>
+                    </center>
+                </center>
+            </div>
+        </center>
+    </main>
+    <script src='main.js'></script>
+    <script src="../Desktop-site-view.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        .slider {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide1 {
+            background-color: #f2f2f2;
+        }
+
+        .slide2 {
+            background-color: #e6e6e6;
+        }
+
+        .slide3 {
+            background-color: #d9d9d9;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .prev-btn,
+        .next-btn {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .prev-btn:hover,
+        .next-btn:hover {
+            background-color: #3e8e41;
+        }
+
+        .prev-btn.disabled,
+        .next-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slide slide1">
+            <h2>الجزء الأول من الصفحة</h2>
+            <p>هذا الجزء يحتوي على بعض المحتويات الأولية.</p>
+        </div>
+        <div class="slide slide2">
+            <h2>الجزء الثاني من الصفحة</h2>
+            <p>هذا الجزء يحتوي على بعض المحتويات الإضافية.</p>
+        </div>
+        <div class="slide slide3">
+            <h2>الجزء الثالث من الصفحة</h2>
+            <p>هذا الجزء يحتوي على بعض المحتويات النهائية.</p>
+        </div>
+        <div class="slider-controls">
+            <button class="prev-btn"><center><img src="images/arrow-left-solid.svg" alt="" style="width: 18px; height: 18px;"></center></button>
+            <button class="next-btn"><img src="images/arrow-left-solid.svg" alt="" style="width: 20px; height: 20px;"></button>
+        </div>
+    </div>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function handlePrevBtnClick() {
+            if (currentIndex === 0) {
+                prevBtn.classList.add('disabled');
+                return;
+            }
+
+            currentIndex--;
+            showSlide(currentIndex);
+
+            nextBtn.classList.remove('disabled');
+        }
+
+        function handleNextBtnClick() {
+            if (currentIndex === slides.length - 1) {
+                nextBtn.classList.add('disabled');
+                return;
+            }
+
+            currentIndex++;
+            showSlide(currentIndex);
+
+            prevBtn.classList.remove('disabled');
+        }
+
+        showSlide(currentIndex);
+
+        prevBtn.addEventListener('click', handlePrevBtnClick);
+        nextBtn.addEventListener('click', handleNextBtnClick);
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center>
+    <div class="card-container">
+        <div class="card">
+            <img src="../images/صور-برمجة3-1024x683.jpg" alt="Card 1"><br><br><br><br>
+            <h3>Cyber Security</h3><br><br>
+            <center>
+                <p style="font-family: 'Open Sans', sans-serif;">Any application or website of my son is protected by the latest methods of protection and security from hackers</p>
+            </center>
+        </div>
+        <div class="card">
+            <img src="../images/صور-برمجة3-1024x683.jpg" alt="Card 2"><br><br><br><br>
+            <h3>Site Building</h3><br><br>
+            <center>
+                <p style="font-family: 'Open Sans', sans-serif;">Building difficult, big and complicated sites with high security </p>
+            </center>
+        </div>
+        <div class="card">
+            <img src="../images/صور-برمجة3-1024x683.jpg" alt="Card 3"><br><br><br><br>
+            <h3>Desktop Application Programming</h3><br><br>
+            <center>
+                <p style="font-family: 'Open Sans', sans-serif;">I can program any desktop application and link it to data bases and make it look attractive
+                    to users</p><br><br><br><br><br>
+                
+            </center>
+            
+        </div>
+    </div>
+</center>

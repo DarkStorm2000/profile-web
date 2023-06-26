@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    height: 0;
+}
+
+#nav1:hover {
+    color: blue;
+}
+
+#nav1::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: blue;
+    transition: width 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+#nav1:hover::after {
+    width: 100%;
+    transform: translateX(0);
+    color: blue;
+    
+}
+
+.main1 {
+    background-image: linear-gradient(to left, rgba(32, 30, 30, 0.941), #45011d);
+    background-image: linear-gradient(to right, rgba(26, 26, 26, 0.941), #45011d);
+    width: 100%;
+    height: 6970px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#text-container {
+    position: relative;
+}
+
+#old-text,
+#new-text {
+
+    opacity: 1;
+    transition: opacity 5.5s ease-in-out;
+}
+
+#old-text {
+    opacity: 1;
+    animation: fadeOut 5.5s ease-in-out forwards;
+}
+
+#old-text.hidden {
+    opacity: 0;
+}
+
+#new-text {
+    opacity: 0;
+    animation: fadeIn 5.5s ease-in-out forwards;
+}
+
+#new-text.hidden {
+    opacity: 0;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+#div56 {
+    border: 2px solid blue;
+    width: 84px;
+    height: 25px;
+    background-color: blue;
+    margin-top: 270px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: 35px;
+}
+
+#button1 {
+    border: 4px blue;
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-top: 180px;
+    justify-items: center;
+}
+
+#name {
+    width: 750px;
+    height: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 7px;
+    border: none;
+    background: black;
+    color: white;
+    margin-top: 150px;
+}
+
+#email {
+    width: 750px;
+    height: 40px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 7px;
+    border: none;
+    background: black;
+    color: white;
+}
+
+#message {
+    width: 750px;
+    height: 230px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 7px;
+    border: none;
+    background: black;
+    color: white;
+}
+
+#butonsubmit {
+    border: none;
+    width: 70px;
+    height: 40px;
+    background: black;
+    color: white;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#butonsubmit:hover {
+    border: 2px solid black;
+    width: 70px;
+    height: 40px;
+    background: none;
+    color: black;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.buttons {
+    font-family: 'Roboto', sans-serif;
+    width: 15px;
+    height: 20px;
+
+}
+
+
+.gmail {
+    border: 20px solid black;
+    height: 150px;
+    width: 230px;
+    background: black;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.whatsapp {
+    border: 20px solid black;
+    height: 150px;
+    width: 230px;
+    background: black;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
